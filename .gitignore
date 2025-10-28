@@ -4,24 +4,28 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
+# Dependency folders
 node_modules/
-.env/
+frontend/node_modules/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Build output
+dist/
+dist-ssr/
+frontend/dist/
+frontend/build/
+
+# Environment files
+.env
+.env.local
+frontend/.env
+frontend/.env.local
+
+# Editor and OS files
+.vscode/
+.idea/
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
+*.swp
+*.swo
 *.sln
-*.sw?
+*.suo
