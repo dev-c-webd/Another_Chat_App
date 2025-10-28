@@ -16,9 +16,7 @@ frontend/dist/
 frontend/build/
 
 # Environment files
-backend/.env
-frontend/.env
-.env.local
+.env
 
 # Editor and OS files
 .vscode/
