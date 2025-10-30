@@ -66,7 +66,7 @@ const SignUp = () => {
               placeholder='Enter Password'
               className='w-full input input-bordered h-10'
               value={inputs.password}
-              onChange={(e)=>setInputs({...inputs, password:e.target.value})}
+              onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
             />
           </div>
 
@@ -79,7 +79,7 @@ const SignUp = () => {
               placeholder='Confirm Password'
               className='w-full input input-bordered h-10'
               value={inputs.confirmPassword}
-              onChange={(e)=>setInputs({...inputs, confirmPassword: e.target.value})}
+              onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
             />
           </div>
 
@@ -92,9 +92,9 @@ const SignUp = () => {
           </Link>
 
           <div>
-            <button
-              type='submit'
-              className='btn btn-block btn-sm mt-2 border border-slate-700'>Sign Up</button>
+            <button className='btn btn-block btn-sm mt-2 border border-slate-700' disabled={loading}>
+              {loading ? <span className='loading loading-spinner'></span> : "Sign Up"}
+            </button>
           </div>
         </form>
       </div>

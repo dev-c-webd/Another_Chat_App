@@ -49,7 +49,6 @@ export const signupUser = async (req, res) => {
 export const loginUser = async (req, res) => {
     try {
         const { username, password } = req.body;
-
         const user = await User.findOne({ username });
         const checkPassword = await bcrypt.compare(password, user?.password || "");
 
@@ -60,7 +59,7 @@ export const loginUser = async (req, res) => {
 
         generateTokenAndSendCookie(user._id, res);
 
-        res.status(201).json({
+        res.status(200).json({
             _id: user._id,
             fullname: user.fullname,
             username: user.username,
@@ -76,7 +75,7 @@ export const loginUser = async (req, res) => {
 export const logoutUser = async (req, res) => {
     try {
         res.cookie("jwt", "", { maxAge: 0 });
-        res.status(201).json({ message: "Logged out Successfully!" });
+        res.status(200).json({ message: "Logged out Successfully!" });
     } catch (error) {
         console.log("Error in logout controller: ", error.message);
         res.status(500).json({ error: "Internal server error" });
